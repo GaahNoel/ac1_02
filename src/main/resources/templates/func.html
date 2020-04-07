@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionarios</title>
+   <link rel="stylesheet" type="text/css" href="/style.css">
+       
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h1 id="Name">Gabriel Antonio Noel - 180274</h1>
+        <h2>Funcionarios</h2> 
+        <h3>
+            <table width="500px">
+                    <thead>
+                        <tr>
+                            <th >ID</th>
+                            <th >Nome</th>
+                            <th >CPF</th>
+                            <th >Departamento</th>
+                            <th >Salario</th>
+                        </tr>
+                    </thead>
+                        <tr th:each="f:${funcionarios}">    
+                        <td th:text="${f?.id}"/> 
+                        <td th:text="${f?.nome}"/>     
+                        <td th:text="${f?.cpf}"/>
+                        <td th:text="${f?.departamento}"/>
+                        <td th:text="${f?.salario}"/>
+                   
+            </tr>
+            </table>
+        </h3>    
+    </div>
+    <div id="Rodape">
+    <footer>
+        <h3 id="Cadastro">
+            Cadastrar Funcionarios
+        </h3>
+        <h4>
+            
+            <form th:action="@{/}" method="POST">
+                <input type="number" name="id" placeholder="ID"/>
+                <input type="text" name="nome" placeholder="Nome"/>
+                <input type="text" name="salario" placeholder="Salario"/>
+                <input type="text" name="departamento" placeholder="Departamento"/>
+                <input id="cpf" type="text" name="cpf" placeholder="CPF"/>
+                <input id="button" type="submit" value="Cadastrar"/>
+            </form>
+           
+        </h4>
+            <span id="Erro" th:if="${cadastro}"> Erro ! Não é possível cadastrar com campos em branco</span>
+       
+    </footer>
+</div>
+    
+</body>
+</html>
