@@ -76,15 +76,31 @@ form input {
   
 }
 #Erro{
-    display: flex;
-    justify-content: center;
+   
     align-items: center;
-    height: 50px;
-    width: 100%;
     color:white;
-    background: red;
+    font-weight: 700;
+    position: absolute;
+}
+#x
+{
+    position: absolute;
+    color:white;
+    float: right;
+    cursor:pointer;
+    margin-left: 500px;
+  
+}
+.divErro
+{
+    justify-content: center;
+    display: flex;
+    align-items: center;
     margin-top: 10px;
     border-radius: 10px;
-    font-weight: 700;
-   
+    height: 10px;
+    width: 100%;
+    max-width: 1063px;
+    background: red;
+    padding: 30px;
 }

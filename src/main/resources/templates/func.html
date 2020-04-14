@@ -39,8 +39,9 @@
        
     <div id="Rodape">
     <footer>
-        <div id="Erro" th:if="${erro}">
-            <span id="Erro" th:text="${erro}" onclick="this.parentElement.style.display='none'">'&times;</span>
+        <div th:if="${erro}" class="divErro">
+            <span id="Erro" th:text="${erro}"></span>
+            <span id="x" onclick="this.parentElement.style.display='none';">&times;</span>
         </div>
         <h3 id="Cadastro">
             Cadastrar Funcionarios
