@@ -20,18 +20,16 @@ public class ServicoFuncionario {
     }
     public boolean addFuncionario(Funcionario f)
     {
-        if(f.getId()!=0 && !f.getNome().equals(null) && f.getDepartamento()!=0&& f.getSalario()!=0&& !f.getCpf().equals(null))
-        {
-            for(Funcionario func:fr.findAll())
-            {
-                if(func.getCpf().equals(f.getCpf()))
-                    return true;
-            }
-            fr.save(f);
-            return false;
-        }
-        else
+        if(f.getNome() == "" || f.getCargo() == "" || f.getCpf() == "" || f.getEndereco() == "")
             return true;
+        for(Funcionario func: fr.findAll())
+        {
+            if(func.getCpf().equals(f.getCpf()))
+                return true;
+        }
+        
+        fr.save(f);
+        return false;
     }
 
 }
